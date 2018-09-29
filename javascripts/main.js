@@ -1,9 +1,9 @@
 import {calculate} from './components/calculator.js'
+import buttonEvents from './helpers/buttonEvents.js'
 
-// calculate(12,8, 'multiply');
+const initializeApp = () => {
+    buttonEvents();
+    calculate(12,8, 'add');
+}
 
-// calculate(12,8, 'divide');
-
-// calculate(12,8, 'subtract');
-
-calculate(12,8, 'add');
+initializeApp();
