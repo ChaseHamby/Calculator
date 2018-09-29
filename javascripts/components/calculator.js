@@ -10,20 +10,20 @@ const calc = {
 };
 
 // Function that uses math functions from math.js and allows the calculator to work //
-const calculate = (num1, num2, mathType) => {
+const calculate = () => {
     let answer = 0; // knows to start equation at 0
-    switch(mathType){
+    switch(calc.mathType){
         case 'multiply':
-            answer = multiply(num1, num2);
+            answer = multiply(calc.firstNumber, calc.secondNumber);
             break; // this will stop the function from going
         case 'divide':
-            answer = divide(num1, num2);
+            answer = divide(calc.firstNumber, calc.secondNumber);
             break;
         case 'add':
-            answer = add(num1, num2);
+            answer = add(calc.firstNumber, calc.secondNumber);
             break;
         case 'subtract':
-            answer = subtract(num1, num2);
+            answer = subtract(calc.firstNumber, calc.secondNumber);
             break;
         default: 
             answer = 'nope';
@@ -31,15 +31,18 @@ const calculate = (num1, num2, mathType) => {
     setDisplay(answer);
 };
 
+// Used to print the right number to the DOM // 
 const setDisplay = (someNumber) => {
     calc.display = someNumber;
     printToDom(calc.display, 'result');
 };
 
+// Used on the buttons event page to allow the division, add, mult, sub, equal buttons work //
 const setMathType = (newMathType) => {
     calc.mathType = newMathType;
 }
 
+// Used on main js page to print the entire app to DOM // 
 const initialDisplay = () => {
     printToDom(0, 'result');
 }

@@ -1,4 +1,4 @@
-import {addNumber, setMathType} from '../components/calculator.js'
+import {addNumber, setMathType, calculate} from '../components/calculator.js'
 
 const sevenButton = document.getElementById('sevenButton');
 const eightButton = document.getElementById('eightButton');
@@ -8,7 +8,13 @@ const fourButton = document.getElementById('fourButton');
 const fiveButton = document.getElementById('fiveButton');
 const sixButton = document.getElementById('sixButton');
 const multiplyButton = document.getElementById('multiplyButton');
-
+const oneButton = document.getElementById('oneButton');
+const twoButton = document.getElementById('twoButton');
+const threeButton = document.getElementById('threeButton');
+const subtractButton = document.getElementById('subtractButton');
+const zeroButton = document.getElementById('zeroButton');
+const equalsButton = document.getElementById('equalButton');
+const addButton = document.getElementById('addButton');
 
 // Pulling the addNumber function from calc.js file //
 const addNumberCaller = (e) => {
@@ -53,6 +59,38 @@ const multiplyButtonEvent = () => {
     })
 };
 
+const oneButtonEvent = () => {
+    oneButton.addEventListener('click', addNumberCaller);
+};
+
+const twoButtonEvent = () => {
+    twoButton.addEventListener('click', addNumberCaller);
+};
+
+const threeButtonEvent = () => {
+    threeButton.addEventListener('click', addNumberCaller);
+};
+
+const subtractButtonEvent = () => {
+    subtractButton.addEventListener('click', () => {
+        setMathType('subtract');
+    })
+};
+
+const zeroButtonEvent = () => {
+    zeroButton.addEventListener('click', addNumberCaller);
+};
+
+const equalsButtonEvent = () => {
+    equalButton.addEventListener('click', calculate);
+};
+
+const addButtonEvent = () => {
+    addButton.addEventListener('click', () => {
+        setMathType('add');
+    })
+};
+
 // This function houses all of the individual number button functions //
 
 const attachEvents = () => {
@@ -64,6 +102,13 @@ const attachEvents = () => {
     fiveButtonEvent();
     sixButtonEvent();
     multiplyButtonEvent();
+    oneButtonEvent();
+    twoButtonEvent();
+    threeButtonEvent();
+    subtractButtonEvent();
+    zeroButtonEvent();
+    equalsButtonEvent();
+    addButtonEvent();
 }
 
 export default attachEvents;
