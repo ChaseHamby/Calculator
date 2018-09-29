@@ -1,11 +1,5 @@
-const printToDom = (stringToPrint, divId) => {
-    const printHere = document.getElementById(divId);
-    printHere.innerHTML = stringToPrint;
-};
-
-const multiply = (n1, n2) => {
-    return n1 * n2;
-};
+import {printToDom} from './helpers/util.js';
+import {multiply, divide, add, subtract} from './helpers/maths.js';
 
 const calculate = (num1, num2, mathType) => {
     let answer = 0; // knows to start equation at 0
@@ -28,4 +22,4 @@ const calculate = (num1, num2, mathType) => {
     printToDom(answer, 'result'); 
 };
 
-calculate(4,2, 'multiply');
+calculate(12,8, 'multiply');
