@@ -1,4 +1,4 @@
-import {addNumber} from '../components/calculator.js'
+import {addNumber, setMathType} from '../components/calculator.js'
 
 const sevenButton = document.getElementById('sevenButton');
 const eightButton = document.getElementById('eightButton');
@@ -30,7 +30,9 @@ const nineButtonEvent = () => {
 };
 
 const divideButtonEvent = () => {
-    divideButton.addEventListener('click', addNumberCaller);
+    divideButton.addEventListener('click', () => {
+        setMathType('divide');
+    })
 };
 
 const fourButtonEvent = () => {
@@ -46,7 +48,9 @@ const sixButtonEvent = () => {
 };
 
 const multiplyButtonEvent = () => {
-    multiplyButton.addEventListener('click', addNumberCaller);
+    multiplyButton.addEventListener('click', () => {
+        setMathType('multiply');
+    })
 };
 
 // This function houses all of the individual number button functions //
